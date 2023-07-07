@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/mylowhite.jpeg" rel="icon">
+  <link href="assets/img/dyscom.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -40,7 +40,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="index.html"><img src="assets/img/dyscom.png" alt="" class="img-fluid" ></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -246,8 +246,8 @@
             </div>
         </div>
     </div>
-   <!-- ======= Footer ======= -->
-   <footer id="footer" >
+  <!-- ======= Footer ======= -->
+  <footer id="footer" >
 
     <div class="footer-top">
 
@@ -255,9 +255,8 @@
 
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <a href="#header" class="scrollto footer-logo"><img src="assets/img/hero-logo.png" alt=""></a>
-            <h3 >Flash Corp</h3>
-            <p>Chez Flash Corp, nous croyons en la puissance du commerce agricole pour 
+            <a href="#header" class="scrollto footer-logo"><img src="assets/img/négoce1-removebg-preview.png" alt="" style="height: 27vh; width: 35vh;"></a>
+            <p>Chez Dyscom Négoce, nous croyons en la puissance du commerce agricole pour 
               transformer le monde. Nous mettons tout en œuvre pour bâtir des relations solides et durables 
               avec nos partenaires, tout en contribuant à un avenir alimentaire sûr et prospère pour tous.</p>
           </div>
@@ -272,11 +271,11 @@
         </div>
 
         <div class="social-links">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="twitter"><i class="bx bxl-whatsapp"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>         
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" class="google-plus"><i class="bx bx-envelope"></i></a>
         </div>
 
       </div>
@@ -439,7 +438,7 @@
                 <div class="portfolio-links">
                 <a data-toggle="modal" data-target="#exampleModal" data-gallery="portfolioGallery" class="portfolio-lightbox portfolioGalleryw" title="Partagez"><button class="btn btn-danger"><i class="bi bi-share-fill"></i></button></a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                  <a  data-toggle="modal" data-target=".bd-example-modal-lg" id="${k.Idproduct}" class="ToOpenMyModal" title="Plus Détails"><button class="btn btn-primary"><i class="bi bi-eye-fill"></i></button></a>
+                  <a href="produit-detail.html" id="${k.Idproduct}" class="ToOpenMyModal" title="Plus Détails"><button class="btn btn-primary"><i class="bi bi-eye-fill"></i></button></a>
                 </div>
               </div>
             </div>
@@ -449,7 +448,8 @@
           var ToOpenMyModal = document.querySelectorAll('.ToOpenMyModal')
           ToOpenMyModal.forEach((X)=>{
             X.addEventListener('click', function () {
-              
+              var productID = X.id
+              localStorage.setItem('ProductID', productID)      
                const dbref = ref(db);
                 get(child(dbref, "Thedatas/" + X.id))
                 .then((snapshot) => {
