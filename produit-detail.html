@@ -45,11 +45,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="index&.html">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="#about">À PROPOS</a></li>
+          <li><a class="nav-link scrollto " href="index.html">Accueil</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">À PROPOS</a></li>
           <li><a class="nav-link scrollto" href="index&.html#services">Services</a></li>
           <li><a class="nav-link scrollto" href="produits.html">Nos Produits</a></li>
-          <li><a class="nav-link scrollto" href="index&.html#team">Nos Fournisseurs</a></li>
+         <!--  <li><a class="nav-link scrollto" href="index&.html#team">Nos Fournisseurs</a></li>-->
           <li><a class="nav-link scrollto" href="index&.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -102,11 +102,11 @@
         </div>
 
         <div class="social-links">
-          <a href="#" class="twitter"><i class="bx bxl-whatsapp"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>         
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="#" class="google-plus"><i class="bx bx-envelope"></i></a>
+          <a href="https://wa.me/+22956983538?text=Salut Dyscom Négoce,%20comment%20allez-vous%20?%20Vous%20êtes%20une entreprise de négoce de matières premières agricoles%20et%20je%20suis%20vraiment%20intéressé%20par%20vos%20services. J'aimerais en savoir plus sur vous et explorer les possibilités d'une connexion significative." class="twitter"><i class="bx bxl-whatsapp"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=100094398087449" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <!--<a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>-->         
+          <a href="https://www.linkedin.com/in/dyscom-n%C3%A9goce-817935283/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="mailto:dyscomnegoce@gmail.com" class="google-plus"><i class="bx bx-envelope"></i></a>
         </div>
 
       </div>
@@ -151,13 +151,13 @@
 
     // Your web app's Firebase configuration
     const firebaseConfig = {
-    apiKey: "AIzaSyDjln_Koljtb3bJU1x8iYECTC_Lc5Wc2NQ",
-    authDomain: "luvsicosmetic.firebaseapp.com",
-    databaseURL: "https://luvsicosmetic-default-rtdb.firebaseio.com",
-    projectId: "luvsicosmetic",
-    storageBucket: "luvsicosmetic.appspot.com",
-    messagingSenderId: "294519262501",
-    appId: "1:294519262501:web:5914a10943525a0c179ecc"
+    apiKey: "AIzaSyD9fJ30wZSxelxzlvT5G-zST3uvsz0k5Cw",
+    authDomain: "dyscom-negoce.firebaseapp.com",
+    databaseURL: "https://dyscom-negoce-default-rtdb.firebaseio.com",
+    projectId: "dyscom-negoce",
+    storageBucket: "dyscom-negoce.appspot.com",
+    messagingSenderId: "908398491171",
+    appId: "1:908398491171:web:11d6efb1cf54c43b0e2396"
     };
 
     // Initialize Firebase
@@ -255,7 +255,9 @@
                   </div>
                   `
                 } else {
-                    alert("no data");
+                  document.getElementById('preloader').style.display = "none"
+          var CreateAllproductnodata = document.getElementById('idtheAllProForsiteContainer')
+          CreateAllproductnodata.innerHTML = `<div style = "display: flex; justify-content: center; margin: auto;"><img src="assets/img/no_data.svg" alt="" style = "width: 100%; height: 20vh;"> </div><br><p style="text-align: center;">Pas de produit disponible pour l'instant.</p>`
                 }
                 var divElement = document.getElementById('autoclick');
                 divElement.click();
