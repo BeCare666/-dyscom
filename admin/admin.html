@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="admin.css">
         <title>Administration</title>
         <link href="./../assets/img/mylowhite.jpeg" rel="icon">
+        <link href="./../assets/img/dyscom.png" rel="icon">
 
     </head>
 
@@ -250,11 +251,11 @@
                                                     <input type="tel"
                                                         class="form-control"
                                                         id="recipient-name4">
-                                                        <label for="recipient-name"
+                                                       <!-- <label for="recipient-name"
                                                         class="col-form-label">Prix/Tonne</label>
                                                     <input type="tel"
                                                         class="form-control"
-                                                        id="recipient-name3">
+                                                        id="recipient-name3">-->
                                                     <label for="recipient-name"
                                                         class="col-form-label">Catégorie
                                                         :</label>
@@ -328,8 +329,8 @@
                                             <th scope="col">Nom</th>
                                             <th scope="col">Date</th>
                                             <th scope="col">Catégorie</th>
-                                            <th scope="col">Prix fcfa</th>
-                                            <th scope="col">Prix promo fcfa</th>
+                                           <th scope="col">Tonne </th>
+                                            <!--- <th scope="col">Prix promo fcfa</th>-->
                                             <th scope="col">Description</th>
                                             <th scope="col">Id</th>
 
@@ -475,7 +476,6 @@
         var namebox = document.getElementById("recipient-name1");
         var rollbox = document.getElementById("recipient-name2");
         var rollboxX = document.getElementById("recipient-name2X");
-        var secbox = document.getElementById("recipient-name3");
         var genbox = document.getElementById("recipient-name4");
         var genboxprix = document.getElementById("exampleFormControlSelect1");
         var genboxprixstart = document.getElementById("exampleFormControlSelect1start");
@@ -687,7 +687,6 @@
         NameOfstd: namebox.value,
         RollNo: urlImage[0],
         RollNoX: urlImageX[0],
-        PrixPromo: secbox.value,
         Prix: genbox.value,
         Category: genboxprix.value,
         Genboxtextarea: genboxtextarea.value,
@@ -722,7 +721,7 @@
 
             update(ref(db, "Thedatas/" + last), {
                 NameOfstd: namebox.value,
-                PrixPromo: secbox.value,
+              
                 Prix: genbox.value,
                 Category: genboxprix.value,
                 Genboxtextarea: genboxtextarea.value,
@@ -765,7 +764,7 @@
             .then((snapshot) => {
             if (snapshot.exists()) {
             namebox.value = snapshot.val().NameOfstd;
-            secbox.value = snapshot.val().PrixPromo;
+           
             genbox.value = snapshot.val().Prix;
             genboxprix.value = snapshot.val().Category;
             genboxtextarea.value = snapshot.val().Genboxtextarea;
@@ -829,13 +828,7 @@
                         </a>
                     </td>
                     <td>
-                        ${k.Prix}
-                    </td>
-                    <td>
-                        <span class="badge badge-lg badge-dot">
-                            <i class="bg-success"></i>
-                            ${k.PrixPromo}
-                        </span>
+                        ${k.Prix} 
                     </td>
                     <td>
                         <div style="width: 20vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.Genboxtextarea}</div> 
